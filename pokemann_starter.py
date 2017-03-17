@@ -59,8 +59,12 @@ class Pokemann:
         """
         Raises current_health by amount but not more than the base health.
         """
-        pass
-
+        self.current_health += amount
+        print(self.name + " now has " + str(self.current_health) +" health")
+        if self.current_health > self.health:
+            self.current_health = self.health
+        self.fainted = False
+        
     def restore(self):
         self.current_health = self.health
         print("Power Restored")
@@ -130,8 +134,11 @@ class Move:
         return round(p * a / d * e) 
     
     def restore(self):
+        move.remianing power
         self.current_health = self.health
         print("Power Restored")
+
+        
         
         
 class Character:
